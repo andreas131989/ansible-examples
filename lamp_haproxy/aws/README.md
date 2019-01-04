@@ -8,7 +8,7 @@ LAMP Stack + HAProxy: Example Playbooks for Amazon Web Services
 
 Run the following commands:
 
-cd ~/home/ubuntu/ansible-examples/lamp_haproxy/aws
+cd /home/ubuntu/ansible-examples/lamp_haproxy/aws
 
 ansible-playbook demo-aws-launch.yml
 
