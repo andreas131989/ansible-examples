@@ -1,6 +1,25 @@
 LAMP Stack + HAProxy: Example Playbooks for Amazon Web Services
 -----------------------------------------------------------------------------
 
+
+
+
+### Modified Demo
+
+Run the following commands:
+
+cd ~/home/ubuntu/ansible-examples/lamp_haproxy/aws
+
+ansible-playbook demo-aws-launch.yml
+
+ansible-playbook site.yml --private-key ./ansible_demo.pem -u ec2-user
+
+curl http://<loadbalancerPublicIP>:8888
+
+
+
+
+
 - Requires Ansible 1.2
 - Expects CentOS/RHEL 6 hosts
 

@@ -6,6 +6,9 @@
     name: haproxy
     state: present
 
+- name: SELinux config for RHEL
+  command: setsebool haproxy_connect_any on
+
 - name: Configure the haproxy cnf file with hosts
   template:
     src: haproxy.cfg.j2

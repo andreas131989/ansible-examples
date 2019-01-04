@@ -52,20 +52,6 @@
       wait: true
     register: ec2
 
-  - name: Launch monitoring instance
-    ec2:
-      access_key: "{{ ec2_access_key }}"
-      secret_key: "{{ ec2_secret_key }}"
-      keypair: "{{ ec2_keypair }}"
-      group: "{{ ec2_security_group }}"
-      type: "{{ ec2_instance_type }}"
-      image: "{{ ec2_image }}"
-      region: "{{ ec2_region }}"
-      instance_tags: "{'ansible_group':'monitoring', 'type':'{{ ec2_instance_type }}', 'group':'{{ ec2_security_group }}', 'Name':'demo_''{{ tower_user_name }}'}"
-      count: "1"
-      wait: true
-    register: ec2
-
   - name: Wait for SSH to come up
     wait_for:
       host: "{{ item.public_dns_name }}"
@@ -74,3 +60,7 @@
       timeout: 320
       state: started
     with_items: "{{ ec2.instances }}"
+
+  - name: Wait for initialization
+    pause:
+      minutes: 3

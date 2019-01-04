@@ -3,13 +3,13 @@
 
 # Apply common configuration to all hosts
 - hosts: all
-
+  become: true
   roles:
   - common
 
 # Configure and deploy database servers.
 - hosts: tag_ansible_group_dbservers
-
+  become: true
   roles:
   - db
 
@@ -20,7 +20,7 @@
 # the 'base-apache' role which simply sets up Apache, and 'web' which includes
 # our example web application.
 - hosts: tag_ansible_group_webservers
-
+  become: true
   roles:
   - base-apache
   - web
@@ -30,7 +30,7 @@
 
 # Configure and deploy the load balancer(s).
 - hosts: tag_ansible_group_lbservers
-
+  become: true
   roles:
   - haproxy
 
@@ -39,10 +39,9 @@
 
 # Configure and deploy the Nagios monitoring node(s).
 - hosts: tag_ansible_group_monitoring
-
+  become: true
   roles:
   - base-apache
-  - nagios
 
   tags:
   - monitoring

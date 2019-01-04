@@ -1,6 +1,9 @@
 ---
 # This will install nagios
 
+- name: Add repo
+  command: rpm -Uvh https://rpmfind.net/linux/remi/enterprise/6/remi/x86_64/compat-mysql51-5.1.73-1.el6.remi.x86_64.rpm 
+
 - name: install nagios
   yum:
     pkg: "{{ item }}"

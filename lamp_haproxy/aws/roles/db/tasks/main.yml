@@ -1,6 +1,9 @@
 ---
 # This role will install MySQL and create db user and give permissions.
 
+- name: Add mysql repo
+  command: rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+
 - name: Install Mysql package
   yum:
     name: "{{ item }}"
