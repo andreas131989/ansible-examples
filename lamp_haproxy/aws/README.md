@@ -14,7 +14,7 @@ ansible-playbook demo-aws-launch.yml
 
 ansible-playbook site.yml --private-key ./ansible_demo.pem -u ec2-user
 
-curl http://<loadbalancerPublicIP>:8888
+curl http://loadbalancerPublicIP:8888
 
 
 
