@@ -8,6 +8,9 @@ LAMP Stack + HAProxy: Example Playbooks for Amazon Web Services
 
 Run the following commands:
 
+export AWS_ACCESS_KEY_ID='taken_from_AWS'
+export AWS_SECRET_ACCESS_KEY='taken_from_AWS'
+
 cd /home/ubuntu/ansible-examples/lamp_haproxy/aws
 
 ansible-playbook demo-aws-launch.yml
