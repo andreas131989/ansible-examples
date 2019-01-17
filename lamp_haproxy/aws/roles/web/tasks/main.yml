@@ -1,6 +1,10 @@
 ---
-- name: Copy the code from repository
-  git:
-    repo: "{{ repository }}"
-    version: "{{ webapp_version }}"
-    dest: /var/www/html/
+- name: Building index.html files
+  template:
+    src: index.html.j2
+    dest: "/var/www/html/index.html"
+
+- name: Building about.html files
+  template:
+    src: about.html.j2
+    dest: "/var/www/html/about.html"
